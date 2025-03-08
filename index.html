@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cnn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://icons8.com">
+</head>
+<body>
+
+    <div class="gallery-wrap">
+
+        <img src="img/icons8-u-turn-to-left-48.png" alt="" id="backBtn">
+        <div class="gallery">
+            <div>
+                    <span><img src="img/foto tipo passe.jpg" alt=""></span>
+                    <span><img src="img/idoso sorrindo.jpg" alt=""></span>
+                    <span><img src="img/mae e filha.jpg" alt=""></span>
+            </div>  
+            <div>
+                <span><img src="img/foto tipo passe.jpg" alt=""></span>
+                <span><img src="img/idoso sorrindo.jpg" alt=""></span>
+                <span><img src="img/mae e filha.jpg" alt=""></span>
+        </div>  
+    </div>    
+         <img src="img/icons8-avançar-64.png" alt=""  id="nextBtn">
+    </div>
+
+     <script>
+
+        let scrollContainer =  document.querySelector(".gallery ");
+        let backBtn = document.getElementById("backBtn");
+        let nextBtn = document.getElementById("nextBtn");
+
+        scrollContainer.addEventListener("wheel",  (evt) =>{
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.style.scrollBehavior = "auto";
+        } );
+
+        nextBtn.addEventListener("click", ()=>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft +=900;
+        })
+        backBtn.addEventListener("click", ()=>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft -=900;
+        })
+     </script>
+    
+</body>
+</html>
